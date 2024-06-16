@@ -17,8 +17,16 @@ class PokemonSeeder extends Seeder
             'name' => 'MissingNo.',
             'imgLink' => '/storage/images/pokemon/MissingNo.png',
             'description' => 'MissingNo. est un système de gestion de bug du jeu pokemon. Il est difficile de le rencontrer et apparait que sous certaines conditions',
-
-
+            'hp' => 12,
+            'att' => 12,
+            'attSpe' => 12,
+            'def' => 12,
+            'defSpe' => 12,
+            'vit' => 12,
+            'size' => 12,
+            'weight' => 12,
+            'type1_id' => 2,
+            'type2_id' => 1
         ]);
     }
 }
