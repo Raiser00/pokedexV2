@@ -13,6 +13,7 @@ class PokemonSeeder extends Seeder
      */
     public function run(): void
     {
+        // ajout des pokemon dans la db
         Pokemon::create([
             'name' => 'MissingNo.',
             'imgLink' => '/storage/images/pokemon/MissingNo.png',
