@@ -14,7 +14,7 @@ return new class extends Migration
         // Creation de la table attack avec lien a la table type via id
         Schema::create('attacks', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->string('name')->unique();
             $table->integer('damage');
             $table->text('description');
             $table->unsignedBigInteger('type_id');
