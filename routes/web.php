@@ -16,6 +16,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [PokedexUserController::class, 'index']);
+Route::get('/pokedexuser', [PokedexUserController::class, 'index'])->name('front.pokedexuser.index');
 
 Route::get('/dashboard', function () {
     return view('dashboard');

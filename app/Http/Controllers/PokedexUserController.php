@@ -7,14 +7,21 @@ use Illuminate\Http\Request;
 
 class PokedexUserController extends Controller
 {
-    public function index()
-    {
-        $pokemon = Pokemon::all();
+    public function index(){
+        $pokemons = Pokemon::all();
 
-        return view('pokemon.index', [
-            'pokemon' =>$pokemon,
+        return view('pokedexuser.index', [
+            'pokemons' => $pokemons,
         ]);
     }
+
+
+    // public function index(){
+    //     $pokemon = Pokemon::with(['type1', 'type2'])->get();
+    //     return view('pokedexuser.index', [
+    //         'pokedexuser' => $pokemon,
+    //     ]);
+    // }
 
     // public function show($id){
     //     $pokemon=Pokemon::find($id);
