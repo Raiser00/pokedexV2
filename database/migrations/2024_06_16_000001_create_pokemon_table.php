@@ -17,7 +17,6 @@ return new class extends Migration
             $table->string('name')->unique();
             $table->string('imgLink');
             $table->text('description');
-            $table->integer('hp');
             $table->integer('att');
             $table->integer('attSpe');
             $table->integer('def');
