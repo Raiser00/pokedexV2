@@ -11,8 +11,22 @@ return new class extends Migration
      */
     public function up(): void
     {
+        // creation de la table pokemon avec une relation à la table type + possibilite d'avoir qu'un type
         Schema::create('pokemon', function (Blueprint $table) {
             $table->id();
+            $table->string('name')->unique();
+            $table->string('imgLink');
+            $table->text('description');
+            $table->integer('hp');
+            $table->integer('att');
+            $table->integer('attSpe');
+            $table->integer('def');
+            $table->integer('defSpe');
+            $table->integer('vit');
+            $table->float('size');
+            $table->float('weight');
+            $table->foreignId('type1_id')->references('id')->on('types');
+            $table->foreignId('type2_id')->nullable()->references('id')->on('types');
             $table->timestamps();
         });
     }

@@ -11,8 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
+        // Creation de la table type
         Schema::create('types', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->string('imgLink');
             $table->timestamps();
         });
     }

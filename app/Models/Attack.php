@@ -11,6 +11,7 @@ class Attack extends Model
 
     public function type()
     {
+        // 1 attack est lier à un type
         return $this->belongsTo(Type::class);
     }
 

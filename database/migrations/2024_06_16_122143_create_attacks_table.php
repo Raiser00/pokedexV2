@@ -11,8 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
+        // Creation de la table attack avec lien a la table type via id
         Schema::create('attacks', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->integer('damage');
+            $table->text('description');
+            $table->unsignedBigInteger('type_id');
+            $table->foreign('type_id')->references('id')->on('types');
             $table->timestamps();
         });
     }
