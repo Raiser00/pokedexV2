@@ -8,10 +8,12 @@ use Illuminate\Http\Request;
 class PokedexUserController extends Controller
 {
     public function index(){
-        $pokemons = Pokemon::all();
+        //$pokemon = Pokemon::paginate(12);
+
+        $pokemon=Pokemon::with(['type1', 'type2'])->get();
 
         return view('pokedexuser.index', [
-            'pokemons' => $pokemons,
+            'pokemon' => $pokemon,
         ]);
     }
 
@@ -23,10 +25,10 @@ class PokedexUserController extends Controller
     //     ]);
     // }
 
-    // public function show($id){
-    //     $pokemon=Pokemon::find($id);
-    //     return view('pokemon.show', [
-    //         'pokemon' => $pokemon,
-    //     ]);
-    // }
+    public function show($id){
+        $pokemon = Pokemon::find($id);
+        return view('pokedexuser.show', [
+            'pokemon' => $pokemon,
+        ]);
+    }
 }
