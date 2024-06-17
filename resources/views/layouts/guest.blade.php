@@ -28,7 +28,7 @@
                     </a>
                 </div>
                 <div class="flex items-center space-x-4 justify-end">
-                    <a class="font-bold hover:text-emerald-600 transition" href="/">Pokédex</a>
+                    <a class="font-bold hover:text-emerald-600 transition" href="/">Liste du ManitoDex</a>
                 </div>
             </nav>
 

@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class PokedexUserController extends Controller
 {
     public function index(){
-        //$pokemon = Pokemon::paginate(12);
+        $pokemon = Pokemon::paginate(12);
 
         $pokemon=Pokemon::with(['type1', 'type2'])->get();
 
