@@ -1,7 +1,5 @@
 <?php
 
-use App\Http\Controllers\Admin\PokedexAdminController;
-use App\Http\Controllers\PokedexUserController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -16,32 +14,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/welcome');
+Route::get('/', function () {
+    return view('welcome');
+});
 
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
-
-
-// Accueil
-Route::get('/', [PokedexUserController::class, 'index']);
-//Recherche d'un pokemon
-Route::get('/pokemon', [PokedexUserController::class, 'index'])->name('front.pokedexuser.index');
-Route::get('/pokemon/{id}', [PokedexUserController::class, 'show'])->name('front.pokedexuser.show');
-
-
-
-
-
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-});
-
-Route::middleware(['auth'])->prefix('admin')->group(function () {
-    Route::resource('pokemon', PokedexAdminController::class);
 });
 
 require __DIR__.'/auth.php';
