@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\PokemonCreateRequest;
 use App\Models\Pokemon;
 use Illuminate\Http\Request;
 
@@ -32,9 +33,34 @@ class PokedexAdminController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(PokemonCreateRequest $request)
     {
-        //
+        // donnée a valider
+        $validated = $request->validated();
+
+        $pokemon = new Pokemon();
+        $pokemon->name = $validated['name'];
+        $pokemon->description = $validated['description'];
+        $pokemon->hp = $validated['hp'];
+        $pokemon->att = $validated['att'];
+        $pokemon->attSpe = $validated['attSpe'];
+        $pokemon->def = $validated['def'];
+        $pokemon->defSpe = $validated['defSpe'];
+        $pokemon->vit = $validated['vit'];
+        $pokemon->size = $validated['size'];
+        $pokemon->weight = $validated['weight'];
+        $pokemon->type1_id = $validated['type1_id'];
+        $pokemon->type2_id = $validated['type2_id'] ?? null;
+
+        // recupere l'image
+        if ($request->hasFile('imgLink')) {
+            $path = $request->file('imgLink')->store('pokemon', 'public');
+            $pokemon->imgLink = $path;
+        }
+
+        $pokemon->save();
+
+        return redirect()->route('front.pokedexadmin.index');
     }
 
     /**
@@ -66,6 +92,8 @@ class PokedexAdminController extends Controller
      */
     public function destroy(Pokemon $pokemon)
     {
-        //
+        $pokemon->delete();
+
+        return redirect()->back();
     }
 }
