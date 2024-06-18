@@ -22,10 +22,10 @@ class PokemonUpdateRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name' => 'required|string|max:50',
-            'imgLink' => 'required|string|max:255',
-            'description' => 'required|string',
-            'hp' => 'required|integer|min:1',
+             'name' => 'required|string|max:50',
+            // 'imgLink' => 'required|string|max:255',
+             'description' => 'required|string',
+             'hp' => 'required|integer|min:1',
             'att' => 'required|integer|min:1',
             'attSpe' => 'required|integer|min:1',
             'def' => 'required|integer|min:1',

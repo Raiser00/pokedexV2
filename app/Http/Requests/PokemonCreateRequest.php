@@ -23,7 +23,7 @@ class PokemonCreateRequest extends FormRequest
     {
         return [
             'name' => 'required|string|max:50',
-            'imgLink' => 'required|string|max:255',
+            'imgLink' => 'required',
             'description' => 'required|string',
             'hp' => 'required|integer|min:1',
             'att' => 'required|integer|min:1',

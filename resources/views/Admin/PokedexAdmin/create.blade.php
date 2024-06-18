@@ -13,7 +13,7 @@
 
         <div>
             <x-input-label for="imgLink" :value="__('Image URL')" />
-            <x-text-input id="imgLink" class="block mt-1 w-full" type="text" name="imgLink" :value="old('imgLink')" />
+            <x-text-input id="imgLink" class="block mt-1 w-full" type="file" name="imgLink" :value="old('imgLink')" />
             <x-input-error :messages="$errors->get('imgLink')" class="mt-2" />
         </div>
 

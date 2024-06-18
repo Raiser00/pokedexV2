@@ -30,11 +30,12 @@ class PokedexAdminController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create(Pokemon $pokemon)
     {
         $types=Type::all();
-        return view('admin.pokedexadmin.index', [
+        return view('admin.pokedexadmin.create', [
             'types' => $types,
+            'pokemon' => $pokemon,
         ]);
     }
 
@@ -62,13 +63,14 @@ class PokedexAdminController extends Controller
 
         // recupere l'image
         if ($request->hasFile('imgLink')) {
-            $path = $request->file('imgLink')->store('pokemon', 'public');
+            $path = $request->file('imgLink')->store('images/pokemon', 'public');
+            $path = '/storage/' . $path;
             $pokemon->imgLink = $path;
         }
 
         $pokemon->save();
 
-        return redirect()->route('admin.pokedexadmin.index');
+        return redirect()->route('pokemon.index');
     }
 
     /**
@@ -97,9 +99,11 @@ class PokedexAdminController extends Controller
     public function update(PokemonUpdateRequest $request, Pokemon $pokemon)
     {
         // donnée a valider
+
+        //dd($pokemon);
         $validated = $request->validated();
 
-        $pokemon = new Pokemon();
+        $pokemon = Pokemon::findOrFail($pokemon->id);
         $pokemon->name = $validated['name'];
         $pokemon->description = $validated['description'];
         $pokemon->hp = $validated['hp'];
@@ -114,16 +118,16 @@ class PokedexAdminController extends Controller
         $pokemon->type2_id = $validated['type2_id'] ?? null;
 
         // recupere l'image
-        if ($request->hasFile('imgLink')) {
-            $path = $request->file('imgLink')->store('pokemon', 'public');
-            $pokemon->imgLink = $path;
-        }
+        // if ($request->hasFile('imgLink')) {
+        //     $path = $request->file('imgLink')->store('pokemon', 'public');
+        //     $pokemon->imgLink = $path;
+        // }
 
         $pokemon->save();
 
 
 
-        return redirect()->back();
+        return redirect()->route('pokemon.index');
     }
 
     /**

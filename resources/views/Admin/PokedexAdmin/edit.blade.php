@@ -14,13 +14,7 @@
                     <x-input-error :messages="$errors->get('name')" class="mt-2" />
                 </div>
 
-                <!-- Image URL -->
-                <div>
-                    <x-input-label for="imgLink" :value="__('Image URL')" />
-                    <x-text-input id="imgLink" class="block mt-1 w-full" type="text" name="imgLink" value="{{ old('imgLink', $pokemon->imgLink) }}" />
-                    <x-input-error :messages="$errors->get('imgLink')" class="mt-2" />
-                </div>
-            </div>
+
 
             <!-- Description -->
             <div>
