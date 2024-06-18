@@ -8,6 +8,7 @@ use App\Http\Requests\PokemonUpdateRequest;
 use App\Models\Pokemon;
 use App\Models\Type;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class PokedexAdminController extends Controller
 {
@@ -16,6 +17,8 @@ class PokedexAdminController extends Controller
      */
     public function index(){
         //$pokemon = Pokemon::paginate(12);
+
+
 
         $pokemon=Pokemon::with(['type1', 'type2'])->get();
 
@@ -30,7 +33,7 @@ class PokedexAdminController extends Controller
     public function create()
     {
         $types=Type::all();
-        return view('admin.pokedexadmin.create', [
+        return view('admin.pokedexadmin.index', [
             'types' => $types,
         ]);
     }
@@ -117,6 +120,8 @@ class PokedexAdminController extends Controller
         }
 
         $pokemon->save();
+
+
 
         return redirect()->back();
     }

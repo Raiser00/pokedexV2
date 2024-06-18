@@ -4,6 +4,7 @@
     <form method="POST" action="{{ route('pokemon.store') }}" class="flex flex-col space-y-4 text-gray-500" enctype="multipart/form-data">
         @csrf
 
+
         <div>
             <x-input-label for="name" :value="__('Nom')" />
             <x-text-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" autofocus />
