@@ -16,6 +16,7 @@ return new class extends Migration
             $table->id();
             $table->string('name')->unique();
             $table->integer('damage');
+            $table->integer('precision');
             $table->text('description');
             $table->unsignedBigInteger('type_id');
             $table->foreign('type_id')->references('id')->on('types');

@@ -29,6 +29,38 @@ class PokemonSeeder extends Seeder
             'type1_id' => 2,
             'type2_id' => 1
         ]);
+
+        Pokemon::create([
+            'name' => 'Ricochico',
+            'imgLink' => '/storage/images/pokemon/Ricochico.png',
+            'description' => 'Ricochico est un pokemon venant des archipeles ulola. Ses attaques sont un mix de vent et de feu. ',
+            'hp' => 5,
+            'att' => 3,
+            'attSpe' => 6,
+            'def' => 5,
+            'defSpe' => 5,
+            'vit' => 8,
+            'size' => 2.1,
+            'weight' => 68.4,
+            'type1_id' => 2,
+            'type2_id' => 6
+        ]);
+
+        Pokemon::create([
+            'name' => 'Flamadron',
+            'imgLink' => '/storage/images/pokemon/Flamadron.png',
+            'description' => 'Flamadron est un puissant dragon de flamme et docile. ',
+            'hp' => 6,
+            'att' => 5,
+            'attSpe' => 8,
+            'def' => 5,
+            'defSpe' => 5,
+            'vit' => 8,
+            'size' => 1.9,
+            'weight' => 68.4,
+            'type1_id' => 6,
+            'type2_id' => null
+        ]);
     }
 }
 

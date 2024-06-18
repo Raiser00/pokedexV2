@@ -1,4 +1,4 @@
-<x-guest-layout>
+<x-app-layout>
     <div class="container mx-auto p-4">
         <h1 class="text-red-500 text-3xl md:text-4xl font-bold text-center mb-6">Administration du ManitoDex</h1>
 
@@ -9,7 +9,7 @@
         <ul class="grid grid-cols-1 md:grid-cols-3 gap-6">
             @foreach($pokemon as $pokemn)
             <li class="bg-white rounded-lg shadow-lg p-4 transform transition duration-300 hover:shadow-xl hover:scale-105">
-                <a href="{{ route('pokemon.show', $pokemn) }}">
+                <!-- <a href="{{ route('pokemon.show', $pokemn) }}"> -->
                     <h2 class="text-xl font-bold mb-2 text-center">{{ $pokemn->name }}</h2>
                     <img class="mx-auto mb-4 w-full h-auto max-h-48 object-contain" src="{{ asset($pokemn->imgLink) }}" alt="{{ $pokemn->name }}" />
                     <div class="flex justify-center items-center space-x-2 mb-4">
@@ -32,4 +32,4 @@
 
         </ul>
     </div>
-</x-guest-layout>
+</x-app-layout>

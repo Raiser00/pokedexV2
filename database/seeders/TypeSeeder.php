@@ -17,32 +17,32 @@ class TypeSeeder extends Seeder
         Type::create([
             'name' => 'Normal',
             'imgLink' => '/storage/images/type/Normal.png',
-        ]);
+        ]); //1
 
         Type::create([
             'name' => 'Vol',
             'imgLink' => '/storage/images/type/Vol.png',
-        ]);
+        ]);//2
 
         Type::create([
             'name' => 'Sol',
             'imgLink' => '/storage/images/type/Sol.png',
-        ]);
+        ]);//3
 
         Type::create([
             'name' => 'Roche',
             'imgLink' => '/storage/images/type/Roche.png',
-        ]);
+        ]);//4
 
         Type::create([
             'name' => 'Eau',
             'imgLink' => '/storage/images/type/Eau.png',
-        ]);
+        ]);//5
 
         Type::create([
             'name' => 'Feu',
             'imgLink' => '/storage/images/type/Feu.png',
-        ]);
+        ]);//6
 
         Type::create([
             'name' => 'Plante',
