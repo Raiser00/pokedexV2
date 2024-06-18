@@ -81,7 +81,11 @@ class PokedexAdminController extends Controller
      */
     public function edit(Pokemon $pokemon)
     {
-        //
+        $types = Type::all();
+        return view('admin.pokedexadmin.edit',[
+            'pokemon' => $pokemon,
+            'types' => $types,
+        ]);
     }
 
     /**
