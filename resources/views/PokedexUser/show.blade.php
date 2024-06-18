@@ -1,7 +1,7 @@
 <x-guest-layout>
     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div class="flex flex-col items-center justify-center">
-            <img src="{{ asset($pokemon->imgLink) }}" alt="{{ $pokemon->name }}" class="rounded shadow aspect-auto object-cover object-center" width="200" height="150" />
+            <img src="{{ asset($pokemon->imgLink) }}" alt="{{ $pokemon->name }}" class="rounded shadow aspect-auto object-cover object-center"  />
             <h1 class="font-bold text-xl text-center mt-4 mb-2 capitalize">
                 N°{{ $pokemon->id }} {{ $pokemon->name }}
             </h1>

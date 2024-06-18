@@ -4,7 +4,9 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\PokemonCreateRequest;
+use App\Http\Requests\PokemonUpdateRequest;
 use App\Models\Pokemon;
+use App\Models\Type;
 use Illuminate\Http\Request;
 
 class PokedexAdminController extends Controller
@@ -17,7 +19,7 @@ class PokedexAdminController extends Controller
 
         $pokemon=Pokemon::with(['type1', 'type2'])->get();
 
-        return view('pokedexadmin.index', [
+        return view('admin.pokedexadmin.index', [
             'pokemon' => $pokemon,
         ]);
     }
@@ -27,7 +29,10 @@ class PokedexAdminController extends Controller
      */
     public function create()
     {
-        return view('admin.pokedexadmin.create');
+        $types=Type::all();
+        return view('admin.pokedexadmin.create', [
+            'types' => $types,
+        ]);
     }
 
     /**
@@ -60,13 +65,13 @@ class PokedexAdminController extends Controller
 
         $pokemon->save();
 
-        return redirect()->route('front.pokedexadmin.index');
+        return redirect()->route('admin.pokedexadmin.index');
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(Pokemon $pokemon)
+    public function show(Pokemon $id)
     {
         //
     }
@@ -82,9 +87,34 @@ class PokedexAdminController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Pokemon $pokemon)
+    public function update(PokemonUpdateRequest $request, Pokemon $pokemon)
     {
-        //
+        // donnée a valider
+        $validated = $request->validated();
+
+        $pokemon = new Pokemon();
+        $pokemon->name = $validated['name'];
+        $pokemon->description = $validated['description'];
+        $pokemon->hp = $validated['hp'];
+        $pokemon->att = $validated['att'];
+        $pokemon->attSpe = $validated['attSpe'];
+        $pokemon->def = $validated['def'];
+        $pokemon->defSpe = $validated['defSpe'];
+        $pokemon->vit = $validated['vit'];
+        $pokemon->size = $validated['size'];
+        $pokemon->weight = $validated['weight'];
+        $pokemon->type1_id = $validated['type1_id'];
+        $pokemon->type2_id = $validated['type2_id'] ?? null;
+
+        // recupere l'image
+        if ($request->hasFile('imgLink')) {
+            $path = $request->file('imgLink')->store('pokemon', 'public');
+            $pokemon->imgLink = $path;
+        }
+
+        $pokemon->save();
+
+        return redirect()->back();
     }
 
     /**

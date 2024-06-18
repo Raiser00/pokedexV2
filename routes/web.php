@@ -16,15 +16,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::get('/', [PokedexUserController::class, 'index']);
+// Route::get('/', [PokedexUserController::class, 'index']);
 
 Route::get('/pokemon', [PokedexUserController::class, 'index'])->name('front.pokedexuser.index');
 Route::get('/pokemon/{id}', [PokedexUserController::class, 'show'])->name('front.pokedexuser.show');

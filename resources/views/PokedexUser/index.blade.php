@@ -16,7 +16,7 @@
             <li class="bg-white rounded-lg shadow-lg p-4 transform transition duration-300 hover:shadow-xl hover:scale-105">
                 <a href="{{ route('front.pokedexuser.show', $pokemn) }}" class="block text-center">
                     <h2 class="text-xl font-bold mb-2">{{ $pokemn->name }}</h2>
-                    <img class="mx-auto mb-4" src="{{ asset($pokemn->imgLink) }}" alt="{{ $pokemn->name }}" width="150" height="100" />
+                    <img class="mx-auto mb-4" src="{{ asset($pokemn->imgLink) }}" alt="{{ $pokemn->name }}"  />
                     <div class="flex justify-center space-x-2">
                         <img class="h-8" src="{{ asset($pokemn->type1->imgLink) }}" alt="{{ $pokemn->type1->name }}" />
                         @if($pokemn->type2 !== null)
