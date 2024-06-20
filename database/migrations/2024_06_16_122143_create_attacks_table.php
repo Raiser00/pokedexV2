@@ -17,9 +17,10 @@ return new class extends Migration
             $table->string('name')->unique();
             $table->integer('damage');
             $table->integer('precision');
+            $table->integer('pp');
             $table->text('description');
-            $table->unsignedBigInteger('type_id');
-            $table->foreign('type_id')->references('id')->on('types');
+            $table->foreignId('category_id')->constrained();
+            $table->foreignId('type_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });
     }

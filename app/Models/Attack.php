@@ -9,10 +9,14 @@ class Attack extends Model
 {
     use HasFactory;
 
-    public function type()
+    public function type1()
     {
         // 1 attack est lier à un type
-        return $this->belongsTo(Type::class);
+        return $this->belongsTo(Type::class, "type1_id");
     }
 
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
+    }
 }
