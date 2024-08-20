@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Attack;
-use app\Http\Requests\AttackCreateRequest;
+use App\Http\Requests\AttackCreateRequest;
 use App\Http\Requests\AttackUpdateRequest;
 use Illuminate\Http\Request;
 
