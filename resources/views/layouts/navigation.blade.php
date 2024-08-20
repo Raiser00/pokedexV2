@@ -21,6 +21,11 @@
                         {{ __('Pokemon') }}
                     </x-nav-link>
                 </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                    <x-nav-link :href="route('attack.index')" :active="request()->routeIs('attack')">
+                        {{ __('Attack') }}
+                    </x-nav-link>
+                </div>
             </div>
 
             <!-- Settings Dropdown -->
@@ -77,6 +82,9 @@
             </x-responsive-nav-link>
             <x-responsive-nav-link :href="route('pokemon.index')" :active="request()->routeIs('pokemon')">
                 {{ __('Pokemon') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('attack.index')" :active="request()->routeIs('attack')">
+                {{ __('Attack') }}
             </x-responsive-nav-link>
         </div>
 

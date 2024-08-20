@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class AttackUserController extends Controller
 {
     public function index(){
-        $attack = Attack::paginate(12);
+        $attack = Attack::all();
 
         $attack = Attack::with(['type1'])->get();
 

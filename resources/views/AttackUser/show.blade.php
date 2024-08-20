@@ -1,12 +1,12 @@
 <x-guest-layout>
     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div class="flex flex-col items-center justify-center">
-            <img src="{{ asset($attack->imgLink) }}" alt="{{ $attack->name }}" class="rounded shadow max-w-full h-auto object-cover object-center" style="max-height: 300px;" />
+            <img src="{{ asset($attack->category->imgLink) }}" alt="{{ $attack->category->name }}" class="rounded shadow max-w-full h-auto object-cover object-center" style="max-height: 300px;" />
             <h1 class="font-bold text-xl text-center mt-4 mb-2 capitalize">
                 N°{{ $attack->id }} {{ $attack->name }}
             </h1>
             <div class="flex justify-center space-x-2">
-                <img class="h-8" src="{{ asset($attack->type->imgLink) }}" alt="{{ $attack->type->name }}" />
+                <img class="h-8" src="{{ asset($attack->category->imgLink) }}" alt="{{ $attack->category->name }}" />
             </div>
         </div>
 
@@ -38,11 +38,11 @@
                             </tr>
                             <tr>
                                 <td class="px-4 py-2 font-semibold">Catégorie</td>
-                                <td class="px-4 py-2">{{ $attack->category_id }}</td>
+                                <td class="px-4 py-2">{{ $attack->category->name }}</td>
                             </tr>
                             <tr>
                                 <td class="px-4 py-2 font-semibold">Type</td>
-                                <td class="px-4 py-2">{{ $attack->type_id }}</td>
+                                <td class="px-4 py-2">{{ $attack->imgLink }}</td>
                             </tr>
                         </tbody>
                     </table>

@@ -29,6 +29,8 @@ Route::get('/', [PokedexUserController::class, 'index']);
 Route::get('/pokemon', [PokedexUserController::class, 'index'])->name('front.pokedexuser.index');
 Route::get('/pokemon/{id}', [PokedexUserController::class, 'show'])->name('front.pokedexuser.show');
 
+
+
 Route::get('/attack', [AttackUserController::class, 'index'])->name('front.attackuser.index');
 Route::get('/attack/{id}', [AttackUserController::class, 'show'])->name('front.attackuser.show');
 

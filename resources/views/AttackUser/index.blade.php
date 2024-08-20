@@ -18,7 +18,7 @@
                     <h2 class="text-xl font-bold mb-4">{{ $attacks->name }}</h2>
                     <img class="mx-auto mb-4 max-w-full h-auto max-h-48 object-contain" src="{{ asset($attacks->imgLink) }}" alt="{{ $attacks->name }}" />
                     <div class="flex justify-center space-x-2">
-                        <img class="h-8 w-8 object-cover" src="{{ asset($attacks->type->imgLink) }}" alt="{{ $attacks->type->name }}" />
+                        <img class="h-8 w-8 object-cover" src="{{ asset($attacks->category->imgLink) }}" alt="{{ $attacks->category->name }}" />
                     </div>
                 </a>
             </li>
