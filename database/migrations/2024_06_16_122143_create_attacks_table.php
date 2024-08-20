@@ -21,7 +21,7 @@ return new class extends Migration
             $table->text('description');
             $table->foreignId('category_id')->constrained();
             $table->string('imgLink');
-            $table->foreignId('type_id')->constrained()->onDelete('cascade');
+            $table->foreignId('type1_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });
     }
