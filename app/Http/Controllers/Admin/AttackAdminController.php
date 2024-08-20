@@ -41,7 +41,7 @@ class AttackAdminController extends Controller
         $attack->maxpp = $validated['maxpp'];
         $attack->description = $validated['description'];
         $attack->category_id = $validated['category_id'];
-        $attack->type1_id = $validated['type1_id'];
+        $attack->type_id = $validated['type_id'];
 
         // recupere l'image
         if ($request->hasFile('imgLink')) {
@@ -75,7 +75,7 @@ class AttackAdminController extends Controller
         $attack->maxpp = $validated['maxpp'];
         $attack->description = $validated['description'];
         $attack->category_id = $validated['category_id'];
-        $attack->type1_id = $validated['type1_id'];
+        $attack->type_id = $validated['type_id'];
 
         $attack->save();
 

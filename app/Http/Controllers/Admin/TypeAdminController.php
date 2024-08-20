@@ -48,5 +48,39 @@ class TypeAdminController extends Controller
         return redirect()->route('type.index');
     }
 
-    
+    public function show(Type $type)
+    {
+        //
+    }
+
+    public function edit(Type $type)
+    {
+        $type = Type::all();
+
+        return view('admin.typeadmin.edit', [
+            'type'=> $type,
+        ]);
+    }
+
+    public function update(TypeUpdateRequest $request, Type $type)
+    {
+        $validated = $request->validated();
+
+        $type = Type::findOrFail($type->id);
+        $type->name = $validated['name'];
+        $type->description = $validated['description'];
+        $type->type_id = $validated['type_id'];
+
+        $type->save();
+
+        return redirect()->route('type.index');
+    }
+
+    public function destroy(Type $type)
+    {
+        $type->delete();
+
+        return redirect()->back();
+    }
+
 }
