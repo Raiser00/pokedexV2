@@ -20,12 +20,12 @@ class AttackAdminController extends Controller
         ]);
     }
 
-    public function create(Attack $attack)
+    public function create(Attack $attacks)
     {
         $attack = Attack::all();
 
         return view('admin.attackadmin.create', [
-            'attack' => $attack,
+            'attack' => $attacks,
         ]);
     }
 
@@ -40,7 +40,7 @@ class AttackAdminController extends Controller
         $attack->accuracy = $validated['accuracy'];
         $attack->maxpp = $validated['maxpp'];
         $attack->description = $validated['description'];
-        $attack->category = $validated['category'];
+        $attack->category_id = $validated['category_id'];
         $attack->type1_id = $validated['type1_id'];
 
         // recupere l'image
@@ -74,7 +74,7 @@ class AttackAdminController extends Controller
         $attack->accuracy = $validated['accuracy'];
         $attack->maxpp = $validated['maxpp'];
         $attack->description = $validated['description'];
-        $attack->category = $validated['category'];
+        $attack->category_id = $validated['category_id'];
         $attack->type1_id = $validated['type1_id'];
 
         $attack->save();

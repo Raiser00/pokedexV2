@@ -27,7 +27,7 @@ class AttackUpdateRequest extends FormRequest
             'accuracy' => 'required|integer|min:10|max:100',
             'maxpp' => 'required|integer|min:5|max:45',
             'description' => 'required',
-            'category' => 'required|exists:categories,id',
+            'category_id' => 'required|exists:categories,id',
             'imgLink' => 'required',
             'type1_id' => 'required|exists:types,id',
         ];

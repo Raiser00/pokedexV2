@@ -19,7 +19,7 @@ return new class extends Migration
             $table->integer('accuracy');
             $table->integer('maxpp');
             $table->text('description');
-            $table->foreignId('category_id')->constrained();
+            $table->foreignId('category_id')->constrained()->onDelete('cascade');
             $table->string('imgLink');
             $table->foreignId('type1_id')->constrained()->onDelete('cascade');
             $table->timestamps();
