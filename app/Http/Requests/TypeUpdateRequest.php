@@ -22,7 +22,9 @@ class TypeUpdateRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'name' => 'required|unique:types,name|max:50',
+            'imgLink' => 'required',
+            'type_id' => 'required|exists:types,id',
         ];
     }
 }
