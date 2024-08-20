@@ -25,6 +25,7 @@
                 <a class="font-bold hover:text-emerald-600 transition" href="/"></a>
                 <a href="{{ route('pokemon.create') }}"
                    class="text-gray-700 font-bold py-2 px-4 rounded bg-gray-100 hover:bg-gray-200 transition">Ajouter un Pokémon</a>
+                
             </nav>
         </header>
         <main class="flex-grow">
