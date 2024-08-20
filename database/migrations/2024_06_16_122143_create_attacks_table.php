@@ -15,11 +15,12 @@ return new class extends Migration
         Schema::create('attacks', function (Blueprint $table) {
             $table->id();
             $table->string('name')->unique();
-            $table->integer('damage');
-            $table->integer('precision');
-            $table->integer('pp');
+            $table->integer('power');
+            $table->integer('accuracy');
+            $table->integer('maxpp');
             $table->text('description');
             $table->foreignId('category_id')->constrained();
+            $table->string('imgLink');
             $table->foreignId('type_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });

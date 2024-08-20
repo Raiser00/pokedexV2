@@ -47,42 +47,42 @@ class TypeSeeder extends Seeder
         Type::create([
             'name' => 'Plante',
             'imgLink' => '/storage/images/type/Plante.png',
-        ]);
+        ]);//7
 
         Type::create([
             'name' => 'Combat',
             'imgLink' => '/storage/images/type/Combat.png',
-        ]);
+        ]);//8
 
         Type::create([
             'name' => 'Psy',
             'imgLink' => '/storage/images/type/Psy.png',
-        ]);
+        ]);//9
 
         Type::create([
             'name' => 'Spectre',
             'imgLink' => '/storage/images/type/Spectre.png',
-        ]);
+        ]);//10
 
         Type::create([
             'name' => 'Ténèbres',
             'imgLink' => '/storage/images/type/Ténèbres.png',
-        ]);
+        ]);//11
 
         Type::create([
             'name' => 'Poison',
             'imgLink' => '/storage/images/type/Poison.png',
-        ]);
+        ]);//12
 
         Type::create([
             'name' => 'Insect',
             'imgLink' => '/storage/images/type/Insect.png',
-        ]);
+        ]);//13
 
         Type::create([
             'name' => 'Electric',
             'imgLink' => '/storage/images/type/Electric.png',
-        ]);
+        ]);//14
 
         Type::create([
             'name' => 'Glace',
