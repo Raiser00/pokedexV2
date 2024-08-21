@@ -28,21 +28,21 @@
                     <!-- Power -->
                     <div>
                         <x-input-label for="power" :value="__('Puissance')" />
-                        <x-text-input id="power" class="block mt-1 w-full" type="number" name="power" value="{{ old('power', $attack->power) }}" />
+                        <x-text-input id="power" class="block mt-1 w-full" type="number" min="0" max="512" name="power" value="{{ old('power', $attack->power) }}" />
                         <x-input-error :messages="$errors->get('power')" class="mt-2" />
                     </div>
 
                     <!-- Accuracy -->
                     <div>
                         <x-input-label for="accuracy" :value="__('Précision')" />
-                        <x-text-input id="accuracy" class="block mt-1 w-full" type="number" name="accuracy" value="{{ old('accuracy', $attack->accuracy) }}" />
+                        <x-text-input id="accuracy" class="block mt-1 w-full" type="number" min="0" max="100" name="accuracy" value="{{ old('accuracy', $attack->accuracy) }}" />
                         <x-input-error :messages="$errors->get('accuracy')" class="mt-2" />
                     </div>
 
                     <!-- MAXPP -->
                     <div>
                         <x-input-label for="maxpp" :value="__('MAXPP')" />
-                        <x-text-input id="maxpp" class="block mt-1 w-full" type="number" name="maxpp" value="{{ old('maxpp', $attack->maxpp) }}" />
+                        <x-text-input id="maxpp" class="block mt-1 w-full" type="number" min="5" max="55" name="maxpp" value="{{ old('maxpp', $attack->maxpp) }}" />
                         <x-input-error :messages="$errors->get('maxpp')" class="mt-2" />
                     </div>
 
