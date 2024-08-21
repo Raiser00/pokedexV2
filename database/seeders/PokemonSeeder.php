@@ -61,6 +61,38 @@ class PokemonSeeder extends Seeder
             'type1_id' => 6,
             'type2_id' => null
         ]);
+
+        Pokemon::create([
+            'name' => 'Rhinoshield',
+            'imgLink' => '/storage/images/pokemon/Rhinoshield.png',
+            'description' => 'Rhinoshield détruit tout sur son passage gràce à sa corne . Il est rapide et vif du à sa petite taille. ',
+            'hp' => 7,
+            'att' => 9,
+            'attSpe' => 5,
+            'def' => 9,
+            'defSpe' => 7,
+            'vit' => 10,
+            'size' => 1.0,
+            'weight' => 45.4,
+            'type1_id' => 3,
+            'type2_id' => 8,
+        ]);
+
+        Pokemon::create([
+            'name' => 'Pandaflash',
+            'imgLink' => '/storage/images/pokemon/Pandaflash.png',
+            'description' => 'Il est très rapide et donne le tournis à ses adversaires.  ',
+            'hp' => 7,
+            'att' => 8,
+            'attSpe' => 6,
+            'def' => 7,
+            'defSpe' => 8,
+            'vit' => 12,
+            'size' => 0.9,
+            'weight' => 2.4,
+            'type1_id' => 14,
+            'type2_id' => 1,
+        ]);
     }
 }
 
