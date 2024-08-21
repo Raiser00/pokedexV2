@@ -15,16 +15,22 @@ class PokedexAdminController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index(){
-        //$pokemon = Pokemon::paginate(12);
-
-
-
-        $pokemon=Pokemon::with(['type1', 'type2'])->get();
-
-        return view('admin.pokedexadmin.index', [
-            'pokemon' => $pokemon,
-        ]);
+    public function index(Request $request){
+        $query = Pokemon::query();
+    if ($request->has('search') && $request->search) {
+        $query->where('name', 'LIKE', '%'.$request->search.'%');
+    }
+    if ($request->has('type') && $request->type) {
+        $query->whereHas('type1', function($q) use ($request) {
+            $q->where('id', $request->type);
+        })->orWhereHas('type2', function($q) use ($request) {
+            $q->where('id', $request->type);
+        });
+    }
+    $pokemon = $query->with(['type1', 'type2'])->get();
+    $types = Type::all();
+    return view('admin.pokedexadmin.index', ['pokemon' => $pokemon, 'types' => $types]);
+        
     }
 
     /**
