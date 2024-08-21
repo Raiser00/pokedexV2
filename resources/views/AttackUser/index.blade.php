@@ -20,6 +20,31 @@
                     <div class="flex justify-center space-x-2">
                         <img class="h-8 w-8 object-cover" src="{{ asset($attacks->imgLinkCat) }}" alt="{{ $attacks->category }}" />
                     </div>
+                    <div class="mb-8">
+                <h2 class="font-bold text-lg mb-2">Informations</h2>
+                <div class="overflow-x-auto">
+                    <table class="min-w-full bg-white border border-gray-200 rounded">
+                        <tbody>
+                            <tr>
+                                <td class="font-semibold">Puissance</td>
+                                <td class="">{{ $attacks->power }}</td>
+                            </tr>
+                            <tr>
+                                <td class="font-semibold">Précision</td>
+                                <td class="">{{ $attacks->accuracy }}</td>
+                            </tr>
+                            <tr>
+                                <td class="font-semibold">PP</td>
+                                <td class="">{{ $attacks->maxpp }}</td>
+                            </tr>
+                            <tr>
+                                <td class="font-semibold">Catégorie</td>
+                                <td class="">{{ $attacks->category->name }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
                 </a>
             </li>
             @endforeach

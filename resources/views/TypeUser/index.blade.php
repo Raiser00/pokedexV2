@@ -17,9 +17,7 @@
                 <a href="{{ route('front.typeuser.show', $types) }}" class="block text-center">
                     <h2 class="text-xl font-bold mb-4">{{ $types->name }}</h2>
                     <img class="mx-auto mb-4 max-w-full h-auto max-h-48 object-contain" src="{{ asset($types->imgLink) }}" alt="{{ $types->name }}" />
-                    <div class="flex justify-center space-x-2">
-                        <img class="h-8 w-8 object-cover" src="{{ asset($types->imgLink) }}" alt="{{ $types->name }}" />
-                    </div>
+                    
                 </a>
             </li>
             @endforeach

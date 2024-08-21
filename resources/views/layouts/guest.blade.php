@@ -23,8 +23,8 @@
             </a>
             <nav class="nav-links flex space-x-4">
                 <a class="font-bold hover:text-emerald-600 transition" href="/"></a>
-                <a href="{{ route('pokemon.create') }}"
-                   class="text-gray-700 font-bold py-2 px-4 rounded bg-gray-100 hover:bg-gray-200 transition">Ajouter un Pokémon</a>
+                <a href="{{ route('front.pokedexuser.index') }}"
+                   class="text-gray-700 font-bold py-2 px-4 rounded bg-gray-100 hover:bg-gray-200 transition">Voir la liste des Manitomon</a>
                 <a href="{{ route('front.attackuser.index') }}"
                    class="text-gray-700 font-bold py-2 px-4 rounded bg-gray-100 hover:bg-gray-200 transition">Voir la liste des attaques</a>
                 <a href="{{ route('front.typeuser.index') }}"
