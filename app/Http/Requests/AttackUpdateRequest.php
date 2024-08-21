@@ -28,9 +28,9 @@ class AttackUpdateRequest extends FormRequest
             'maxpp' => 'required|integer|min:5|max:45',
             'description' => 'required',
             'category_id' => 'required|exists:categories,id',
-            'imgLinkCat' => 'required',
-            'type1_id' => 'required|exists:types,id',
-            'imgLinkType'=> 'required',
+            /* 'imgLinkCat' => 'required', */
+            'type_id' => 'required|exists:types,id',
+            /* 'imgLinkType'=> 'required', */
         ];
     }
 }

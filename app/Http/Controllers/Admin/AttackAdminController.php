@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Attack;
+use App\Models\Type;
 use App\Http\Requests\AttackCreateRequest;
 use App\Http\Requests\AttackUpdateRequest;
 use Illuminate\Http\Request;
@@ -64,9 +65,11 @@ class AttackAdminController extends Controller
 
     public function edit(Attack $attack)
     {
-        $attack = Attack::all();
+        $type = Type::all();
         return view('admin.attackadmin.edit',[
             'attack' => $attack,
+            'type' => $type,
+            
         ]);
     }
 
@@ -85,7 +88,7 @@ class AttackAdminController extends Controller
 
         $attack->save();
 
-        return redirect()->back();
+        return redirect()->route('attack.index');
     }
 
     public function destroy(Attack $attack)

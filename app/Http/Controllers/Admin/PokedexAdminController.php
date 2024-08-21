@@ -127,7 +127,7 @@ class PokedexAdminController extends Controller
 
 
 
-        return redirect()->route('admin.pokedexadmin.index');
+        return redirect()->route('pokemon.index');
     }
 
     /**

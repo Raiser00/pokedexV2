@@ -51,15 +51,15 @@
                     <!-- Catégorie -->
                     <div>
                         <x-input-label for="category_id" :value="__('Catégorie')" />
-                        <x-text-input id="category_id" class="block mt-1 w-full" type="number" name="category_id" value="{{ old('category_id', $attack->category_id) }}" />
+                        <x-text-input id="category_id" class="block mt-1 w-full" type="number" min="1" max="3" name="category_id" value="{{ old('category_id', $attack->category_id) }}" />
                         <x-input-error :messages="$errors->get('category_id')" class="mt-2" />
                     </div>
 
                     <!-- Type -->
                     <div>
-                        <x-input-label for="type1_id" :value="__('Type')" />
-                        <x-text-input id="type1_id" class="block mt-1 w-full" type="number" name="type1_id" value="{{ old('type1_id', $attack->type1_id) }}" />
-                        <x-input-error :messages="$errors->get('type1_id')" class="mt-2" />
+                        <x-input-label for="type_id" :value="__('Type')" />
+                        <x-text-input id="type_id" class="block mt-1 w-full" type="number" min="1" max="18" name="type_id" value="{{ old('type_id', $attack->type_id) }}" />
+                        <x-input-error :messages="$errors->get('type_id')" class="mt-2" />
                     </div>
 
 
@@ -67,34 +67,8 @@
 
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <!-- Type 1 -->
-                    <div>
-                        <x-input-label for="type1_id" :value="__('Type')" />
-                        <select id="type1_id" name="type1_id" class="block mt-1 w-full border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm">
-                            @foreach($types as $type)
-                            <option value="{{ $type->id }}" {{ old('type1_id', $attack->type1_id) == $type->id ? 'selected' : '' }}>
-                                {{ $type->name }}
-                            </option>
-                            @endforeach
-                        </select>
-                        <x-input-error :messages="$errors->get('type1_id')" class="mt-2" />
-                    </div>
-
-                    <!-- Type 2 -->
-                    <div>
-                        <x-input-label for="category_id" :value="__('Categorie')" />
-                        <select id="category_id" name="category_id" class="block mt-1 w-full border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm">
-                            
-                            @foreach($category as $categorys)
-                            <option value="{{ $categorys->id }}" {{ old('category_id', $attack->category_id) == $categorys->id ? 'selected' : '' }}>
-                                {{ $categorys->name }}
-                            </option>
-                            @endforeach
-                        </select>
-                        <x-input-error :messages="$errors->get('category_id')" class="mt-2" />
-                    </div>
-                </div>
+                
+                    
 
                 <!-- Submit Button -->
                 <div class="flex justify-end">

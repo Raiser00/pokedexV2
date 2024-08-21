@@ -29,7 +29,7 @@ class AttackCreateRequest extends FormRequest
             'description' => 'required',
             'category_id' => 'required|exists:categories,id',
             'imgLinkCat' => 'required',
-            'type1_id' => 'required|exists:types,id',
+            'type_id' => 'required|exists:types,id',
             'imgLinkType'=> 'required',
         ];
     }
