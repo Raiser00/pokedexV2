@@ -35,7 +35,7 @@ class TypeAdminController extends Controller
         $type = new Type();
         $type->name = $validated['name'];
         
-        $type->type_id = $validated['type_id'];
+        /* $type->type_id = $validated['type_id']; */
 
         if ($request->hasFile('imgLink')) {
             $path = $request->file('imgLink')->store('images/type', 'public');
@@ -69,7 +69,7 @@ class TypeAdminController extends Controller
         /* $type = Type::findOrFail($type->id); */
         $type->name = $validated['name'];
         
-        $type->type_id = $validated['type_id'];
+        /* $type->type_id = $validated['type_id']; */
 
         $type->save();
 

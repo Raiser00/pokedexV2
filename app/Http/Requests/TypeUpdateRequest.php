@@ -24,7 +24,7 @@ class TypeUpdateRequest extends FormRequest
         return [
             'name' => 'required|unique:types,name|max:50',
             /* 'imgLink' => 'required', */
-            'type_id' => 'required|exists:types,id',
+            /* 'id' => 'required|exists:types,id', */
         ];
     }
 }

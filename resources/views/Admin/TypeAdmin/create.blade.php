@@ -25,11 +25,11 @@
                 </div>
 
                 <!-- Type -->
-                <div>
-                    <x-input-label for="type_id" :value="__('Type')" />
-                    <x-text-input id="type_id" class="block mt-1 w-full" type="number" min="1" max="18" name="type_id" value="{{ old('type_id', $type->type_id) }}" />
-                    <x-input-error :messages="$errors->get('type_id')" class="mt-2" />
-                </div>
+                <!-- <div>
+                    <x-input-label for="id" :value="__('Type')" />
+                    <x-text-input id="id" class="block mt-1 w-full" type="number" min="1" max="18" name="id" value="{{ old('id', $type->id) }}" />
+                    <x-input-error :messages="$errors->get('id')" class="mt-2" />
+                </div> -->
             </div>
 
 
