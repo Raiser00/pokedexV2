@@ -3,6 +3,9 @@
 use App\Http\Controllers\Admin\PokedexAdminController;
 use App\Http\Controllers\PokedexUserController;
 use App\Http\Controllers\AttackUserController;
+use App\Http\Controllers\Admin\AttackAdminController;
+use App\Http\Controllers\TypeUserController;
+use App\Http\Controllers\Admin\TypeAdminController;
 use App\Http\Controllers\ProfileController;
 use App\Models\Attack;
 use Illuminate\Support\Facades\Route;
@@ -35,6 +38,8 @@ Route::get('/attack', [AttackUserController::class, 'index'])->name('front.attac
 Route::get('/attack/{id}', [AttackUserController::class, 'show'])->name('front.attackuser.show');
 
 
+Route::get('/type', [TypeUserController::class, 'index'])->name('front.typeuser.index');
+Route::get('/type/{id}', [TypeUserController::class, 'show'])->name('front.typeuser.show');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
