@@ -4,7 +4,7 @@
 
         <form method="POST" action="{{ route('attack.store', $attack) }}" class="space-y-6" enctype="multipart/form-data">
             @csrf
-            
+
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <!-- Nom -->
@@ -13,12 +13,12 @@
                     <x-text-input id="name" class="block mt-1 w-full" type="text" name="name" value="{{ old('name', $attack->name) }}" autofocus />
                     <x-input-error :messages="$errors->get('name')" class="mt-2" />
                 </div>
-                 <!-- Description -->
-                 <div>
-                        <x-input-label for="description" :value="__('Description')" />
-                        <textarea id="description" class="block mt-1 w-full border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm" name="description" rows="4">{{ old('description', $attack->description) }}</textarea>
-                        <x-input-error :messages="$errors->get('description')" class="mt-2" />
-                    </div>
+                <!-- Description -->
+                <div>
+                    <x-input-label for="description" :value="__('Description')" />
+                    <textarea id="description" class="block mt-1 w-full border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm" name="description" rows="4">{{ old('description', $attack->description) }}</textarea>
+                    <x-input-error :messages="$errors->get('description')" class="mt-2" />
+                </div>
 
 
 
@@ -46,13 +46,19 @@
                         <x-input-error :messages="$errors->get('maxpp')" class="mt-2" />
                     </div>
 
-                   
+
 
                     <!-- Catégorie -->
                     <div>
                         <x-input-label for="category_id" :value="__('Catégorie')" />
                         <x-text-input id="category_id" class="block mt-1 w-full" type="number" min="1" max="3" name="category_id" value="{{ old('category_id', $attack->category_id) }}" />
                         <x-input-error :messages="$errors->get('category_id')" class="mt-2" />
+                    </div>
+
+                    <div>
+                        <x-input-label for="imgLinkCat" :value="__('Image URL')" />
+                        <x-text-input id="imgLinkCat" class="block mt-1 w-full" type="file" name="imgLinkCat" :value="old('imgLinkCat')" />
+                        <x-input-error :messages="$errors->get('imgLinkCat')" class="mt-2" />
                     </div>
 
                     <!-- Type -->
@@ -62,13 +68,19 @@
                         <x-input-error :messages="$errors->get('type_id')" class="mt-2" />
                     </div>
 
+                    <div>
+                        <x-input-label for="imgLinkType" :value="__('Image URL')" />
+                        <x-text-input id="imgLinkType" class="block mt-1 w-full" type="file" name="imgLinkType" :value="old('imgLinkType')" />
+                        <x-input-error :messages="$errors->get('imgLinkType')" class="mt-2" />
+                    </div>
+
 
 
 
                 </div>
 
-                
-                    
+
+
 
                 <!-- Submit Button -->
                 <div class="flex justify-end">
