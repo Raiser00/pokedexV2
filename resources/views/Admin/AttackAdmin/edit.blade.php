@@ -13,7 +13,12 @@
                     <x-text-input id="name" class="block mt-1 w-full" type="text" name="name" value="{{ old('name', $attack->name) }}" autofocus />
                     <x-input-error :messages="$errors->get('name')" class="mt-2" />
                 </div>
-
+                 <!-- Description -->
+                 <div>
+                        <x-input-label for="description" :value="__('Description')" />
+                        <textarea id="description" class="block mt-1 w-full border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm" name="description" rows="4">{{ old('description', $attack->description) }}</textarea>
+                        <x-input-error :messages="$errors->get('description')" class="mt-2" />
+                    </div>
 
 
 
@@ -41,12 +46,7 @@
                         <x-input-error :messages="$errors->get('maxpp')" class="mt-2" />
                     </div>
 
-                    <!-- Description -->
-                    <div>
-                        <x-input-label for="description" :value="__('Description')" />
-                        <textarea id="description" class="block mt-1 w-full border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm" name="description" rows="4">{{ old('description', $attack->description) }}</textarea>
-                        <x-input-error :messages="$errors->get('description')" class="mt-2" />
-                    </div>
+                   
 
                     <!-- Catégorie -->
                     <div>

@@ -74,7 +74,7 @@ class AttackAdminController extends Controller
     {
         $validated = $request->validated();
 
-        $attack = Attack::findOrFail($attack->id);
+        //$attack = Attack::findOrFail($attack->id);
         $attack->name = $validated['name'];
         $attack->power = $validated['power'];
         $attack->accuracy = $validated['accuracy'];
@@ -85,7 +85,7 @@ class AttackAdminController extends Controller
 
         $attack->save();
 
-        return redirect()->route('attack.index');
+        return redirect()->back();
     }
 
     public function destroy(Attack $attack)
