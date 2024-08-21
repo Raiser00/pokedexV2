@@ -23,9 +23,7 @@ use Illuminate\Support\Facades\Route;
 
 
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+
 
 Route::get('/', [PokedexUserController::class, 'index']);
 
@@ -41,16 +39,37 @@ Route::get('/attack/{id}', [AttackUserController::class, 'show'])->name('front.a
 Route::get('/type', [TypeUserController::class, 'index'])->name('front.typeuser.index');
 Route::get('/type/{id}', [TypeUserController::class, 'show'])->name('front.typeuser.show');
 
+
+
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
+
 Route::middleware(['auth'])->prefix('admin')->group(function () {
-    Route::resource('pokemon', PokedexAdminController::class);
-    Route::resource('attack', AttackAdminController::class);
-    Route::resource('type', TypeAdminController::class);
+    Route::get('pokemon', [PokedexAdminController::class, 'index'])->name('pokemon.index');
+    Route::get('pokemon', [PokedexAdminController::class, 'edit'])->name('pokemon.edit');
+    Route::patch('pokemon', [PokedexAdminController::class, 'update'])->name('pokemon.update');
+    Route::delete('pokemon', [PokedexAdminController::class, 'destroy'])->name('pokemon.destroy');
+});
+
+Route::middleware(['auth'])->prefix('admin')->group(function () {
+    Route::get('/attack', [AttackAdminController::class, 'index'])->name('attackadmin.index');
+    Route::get('/attack', [AttackAdminController::class, 'edit'])->name('attackadmin.edit');
+    Route::patch('/attack', [AttackAdminController::class, 'update'])->name('attackadmin.update');
+    Route::delete('/attack', [AttackAdminController::class, 'destroy'])->name('attackadmin.destroy');
+});
+
+Route::middleware(['auth'])->prefix('admin')->group(function () {
+    Route::get('/type', [TypeAdminController::class, 'index'])->name('typeadmin.index');
+    Route::get('/type', [TypeAdminController::class, 'edit'])->name('typeadmin.edit');
+    Route::patch('/type', [TypeAdminController::class, 'update'])->name('typeadmin.update');
+    Route::delete('/type', [TypeAdminController::class, 'destroy'])->name('typeadmin.destroy');
 });
 
 require __DIR__.'/auth.php';

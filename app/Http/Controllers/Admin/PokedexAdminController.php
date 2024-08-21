@@ -70,7 +70,7 @@ class PokedexAdminController extends Controller
 
         $pokemon->save();
 
-        return redirect()->route('pokemon.index');
+        return redirect()->route('admin.pokedexadmin.index');
     }
 
     /**
@@ -127,7 +127,7 @@ class PokedexAdminController extends Controller
 
 
 
-        return redirect()->route('pokemon.index');
+        return redirect()->route('admin.pokedexadmin.index');
     }
 
     /**

@@ -2,7 +2,7 @@
     <div class="container mx-auto p-4">
         <h1 class="text-red-500 text-3xl font-bold text-center mb-6">Liste des attaques</h1>
 
-        <form action="{{ route('front.attackuser.index') }}" method="GET" class="mb-8">
+        <form action="{{ route('attackadmin.index') }}" method="GET" class="mb-8">
             <div class="flex justify-center space-x-4">
                 <input type="text" name="search" id="search" placeholder="Rechercher une attaque" class="border border-red-500 rounded shadow px-4 py-2 w-2/5 focus:ring-2 focus:ring-red-500" value="{{ request()->search }}" autofocus />
                 <button type="submit" class="bg-red-500 text-white rounded shadow px-4 py-2 hover:bg-red-600 transition duration-300">
@@ -45,8 +45,8 @@
                     </table>
                 </div>
                 <div class="flex justify-center space-x-4">
-                        <a href="{{ route('attack.edit', $attacks->id) }}" class="text-blue-500 font-medium hover:underline">Éditer</a>
-                        <form action="{{ route('attack.destroy', $attacks->id) }}" method="POST" class="inline">
+                        <a href="{{ route('attackadmin.edit', $attacks->id) }}" class="text-blue-500 font-medium hover:underline">Éditer</a>
+                        <form action="{{ route('attackadmin.destroy', $attacks->id) }}" method="POST" class="inline">
                             @csrf
                             @method('DELETE')
                             <button type="submit" class="text-red-500 font-medium hover:underline">Supprimer</button>
