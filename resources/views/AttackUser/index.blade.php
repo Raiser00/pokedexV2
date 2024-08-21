@@ -16,7 +16,7 @@
             <li class="bg-white rounded-lg shadow-lg p-6 transform transition duration-300 hover:shadow-xl hover:scale-105">
                 <a href="{{ route('front.attackuser.show', $attacks) }}" class="block text-center">
                     <h2 class="text-xl font-bold mb-4">{{ $attacks->name }}</h2>
-                    <img class="mx-auto mb-4 max-w-full h-auto max-h-48 object-contain" src="{{ asset($attacks->imgLink) }}" alt="{{ $attacks->name }}" />
+                    <img class="mx-auto mb-4 max-w-full h-auto max-h-48 object-contain" src="{{ asset($attacks->type1->imgLink) }}" alt="{{ $attacks->name }}" />
                     <div class="flex justify-center space-x-2">
                         <img class="h-8 w-8 object-cover" src="{{ asset($attacks->category->imgLink) }}" alt="{{ $attacks->category->name }}" />
                     </div>

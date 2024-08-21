@@ -20,8 +20,9 @@ class AttackSeeder extends Seeder
             'maxpp' => 5,
             'description' => 'Le lanceur projette une tornade sur la cible pour infliger des dégâts. Taux de critiques élevé.',
             'category_id' => 1,
-            'imgLink' => '/storage/images/category/physical.png',
+            'imgLinkCat' => '/storage/images/category/physical.png',
             'type_id' => 2,
+            'imgLinkType'=> '/storage/images/type/Vol.png',
         ]);
 
         Attack::create([
@@ -31,8 +32,9 @@ class AttackSeeder extends Seeder
             'maxpp' => 15,
             'description' => 'Une grosse décharge électrique tombe sur la cible, ce qui peut aussi la paralyser.',
             'category_id' => 2,
-            'imgLink' => '/storage/images/category/special.png',
+            'imgLinkCat' => '/storage/images/category/special.png',
             'type_id' => 14,
+            'imgLinkType'=> '/storage/images/type/Electric.png',
         ]);
 
         Attack::create([
@@ -42,8 +44,9 @@ class AttackSeeder extends Seeder
             'maxpp' => 10,
             'description' => 'Le lanceur crée une zone mystérieuse où la Défense et la Défense Spéciale de tous les Pokémon sont inversées pendant cinq tours.',
             'category_id' => 3,
-            'imgLink' => '/storage/images/category/status.png',
+            'imgLinkCat' => '/storage/images/category/status.png',
             'type_id' => 9,
+            'imgLinkType'=> '/storage/images/type/Psy.png',
         ]);
 
         Attack::create([
@@ -53,8 +56,9 @@ class AttackSeeder extends Seeder
             'maxpp' => 5,
             'description' => 'Le lanceur projette un puissant rayon sur la cible, mais doit se reposer au tour suivant.',
             'category_id' => 2,
-            'imgLink' => '/storage/images/category/special.png',
+            'imgLinkCat' => '/storage/images/category/special.png',
             'type_id' => 1,
+            'imgLinkType'=> '/storage/images/type/Normal.png',
         ]);
 
         Attack::create([
@@ -64,8 +68,9 @@ class AttackSeeder extends Seeder
             'maxpp' => 10,
             'description' => 'Le lanceur provoque un tremblement de terre touchant tous les Pokémon autour de lui.',
             'category_id' => 1,
-            'imgLink' => '/storage/images/category/physical.png',
+            'imgLinkCat' => '/storage/images/category/physical.png',
             'type_id' => 3,
+            'imgLinkType'=> '/storage/images/type/Sol.png',
         ]);
     }
 }

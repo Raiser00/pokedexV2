@@ -44,10 +44,16 @@ class AttackAdminController extends Controller
         $attack->type_id = $validated['type_id'];
 
         // recupere l'image
-        if ($request->hasFile('imgLink')) {
-            $path = $request->file('imgLink')->store('images/category', 'public');
+        if ($request->hasFile('imgLinkCat')) {
+            $path = $request->file('imgLinkCat')->store('images/category', 'public');
             $path = '/storage/' . $path;
-            $attack->imgLink = $path;
+            $attack->imgLinkCat = $path;
+        }
+
+        if ($request->hasFile('imgLinkType')) {
+            $path = $request->file('imgLinkType')->store('images/type', 'public');
+            $path = '/storage/' . $path;
+            $attack->imgLinkType = $path;
         }
 
         $attack->save();

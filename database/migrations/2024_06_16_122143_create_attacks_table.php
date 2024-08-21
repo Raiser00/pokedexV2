@@ -21,8 +21,9 @@ return new class extends Migration
             $table->integer('maxpp');
             $table->text('description');
             $table->foreignId('category_id')->constrained();
-            $table->string('imgLink');
+            $table->string('imgLinkCat');
             $table->foreignId('type_id')->constrained()->onDelete('cascade');
+            $table->foreignId('imgLinkType')->constrained();
             $table->timestamps();
         });
     }

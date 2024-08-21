@@ -10,7 +10,7 @@ class AttackUserController extends Controller
     public function index(){
         $attack = Attack::all();
 
-        $attack = Attack::with(['type'])->get();
+        
 
         return view('attackuser.index', [
             'attack' => $attack,

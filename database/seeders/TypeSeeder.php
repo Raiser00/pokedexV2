@@ -87,21 +87,21 @@ class TypeSeeder extends Seeder
         Type::create([
             'name' => 'Glace',
             'imgLink' => '/storage/images/type/Glace.png',
-        ]);
+        ]);//15
 
         Type::create([
             'name' => 'Dragon',
             'imgLink' => '/storage/images/type/Dragon.png',
-        ]);
+        ]);//16
 
         Type::create([
             'name' => 'Fée',
             'imgLink' => '/storage/images/type/Fée.png',
-        ]);
+        ]);//17
 
         Type::create([
             'name' => 'Acier',
             'imgLink' => '/storage/images/type/Acier.png',
-        ]);
+        ]);//18
     }
 }
