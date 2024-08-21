@@ -12,10 +12,10 @@ class TypeAdminController extends Controller
 {
     public function index()
     {
-        $types = Type::all();
+        $type = Type::all();
 
         return view('admin.typeadmin.index', [
-            'type'=> $types,
+            'type' => $type,
         ]);
     }
 
@@ -24,7 +24,7 @@ class TypeAdminController extends Controller
         $type = Type::all();
 
         return view('admin.typeadmin.create', [
-            'type'=> $type,
+            'type' => $type,
         ]);
     }
 
@@ -34,7 +34,7 @@ class TypeAdminController extends Controller
 
         $type = new Type();
         $type->name = $validated['name'];
-        
+
         /* $type->type_id = $validated['type_id']; */
 
         if ($request->hasFile('imgLink')) {
@@ -55,23 +55,32 @@ class TypeAdminController extends Controller
 
     public function edit(Type $type)
     {
-        $type = Type::all();
+
 
         return view('admin.typeadmin.edit', [
-            'type'=> $type,
+            'type' => $type,
+
+
+
         ]);
     }
 
     public function update(TypeUpdateRequest $request, Type $type)
     {
+
         $validated = $request->validated();
+
 
         /* $type = Type::findOrFail($type->id); */
         $type->name = $validated['name'];
-        
+
         /* $type->type_id = $validated['type_id']; */
 
+
+
         $type->save();
+
+
 
         return redirect()->route('type.index');
     }
@@ -82,5 +91,4 @@ class TypeAdminController extends Controller
 
         return redirect()->back();
     }
-
 }

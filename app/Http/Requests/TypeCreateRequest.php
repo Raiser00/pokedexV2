@@ -23,7 +23,7 @@ class TypeCreateRequest extends FormRequest
     {
         return [
             'name' => 'required|unique:types,name|max:50',
-            'imgLink' => 'required',
+            /* 'imgLink' => 'required', */
             /* 'id' => 'required|exists:types,id', */
         ];
     }

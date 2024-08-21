@@ -22,8 +22,8 @@
                     <h2 class="text-xl font-bold mb-4">{{ $types->name }}</h2>
                     <img class="mx-auto mb-4 max-w-full h-auto max-h-48 object-contain" src="{{ asset($types->imgLink) }}" alt="{{ $types->name }}" />
                     <div class="flex justify-center space-x-4">
-                            <a href="{{ route('type.edit', $types->id) }}" class="text-blue-500 font-medium hover:underline">Éditer</a>
-                            <form action="{{ route('type.destroy', $types->id) }}" method="POST" class="inline">
+                            <a href="{{ route('type.edit', $types) }}" class="text-blue-500 font-medium hover:underline">Éditer</a>
+                            <form action="{{ route('type.destroy', $types) }}" method="POST" class="inline">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="text-red-500 font-medium hover:underline">Supprimer</button>

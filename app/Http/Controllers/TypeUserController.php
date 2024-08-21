@@ -10,10 +10,10 @@ class TypeUserController extends Controller
 {
     public function index()
     {
-        $types = Type::all();
+        $type = Type::all();
 
         return view('typeuser.index', [
-            'type'=> $types,
+            'type'=> $type,
         ]);
     }
 

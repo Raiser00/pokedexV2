@@ -17,19 +17,8 @@
 
 
 
-                <!-- Image -->
-                <!-- <div>
-                    <x-input-label for="imgLink" :value="__('Image URL')" />
-                    <x-text-input id="imgLink" class="block mt-1 w-full" type="file" name="imgLink" :value="old('imgLink')" />
-                    <x-input-error :messages="$errors->get('imgLink')" class="mt-2" />
-                </div> -->
 
-                <!-- Type -->
-                <!-- <div>
-                    <x-input-label for="type_id" :value="__('Type')" />
-                    <x-text-input id="type_id" class="block mt-1 w-full" type="number" min="1" max="18" name="type_id" value="{{ old('type_id', $type->type_id) }}" />
-                    <x-input-error :messages="$errors->get('type_id')" class="mt-2" />
-                </div> -->
+
 
 
 
