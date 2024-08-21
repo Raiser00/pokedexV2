@@ -26,6 +26,11 @@
                         {{ __('Attack') }}
                     </x-nav-link>
                 </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                    <x-nav-link :href="route('type.index')" :active="request()->routeIs('type')">
+                        {{ __('Type') }}
+                    </x-nav-link>
+                </div>
             </div>
 
             <!-- Settings Dropdown -->
@@ -85,6 +90,9 @@
             </x-responsive-nav-link>
             <x-responsive-nav-link :href="route('attack.index')" :active="request()->routeIs('attack')">
                 {{ __('Attack') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('type.index')" :active="request()->routeIs('type')">
+                {{ __('type') }}
             </x-responsive-nav-link>
         </div>
 

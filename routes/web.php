@@ -49,6 +49,8 @@ Route::middleware('auth')->group(function () {
 
 Route::middleware(['auth'])->prefix('admin')->group(function () {
     Route::resource('pokemon', PokedexAdminController::class);
+    Route::resource('attack', AttackAdminController::class);
+    Route::resource('type', TypeAdminController::class);
 });
 
 require __DIR__.'/auth.php';
