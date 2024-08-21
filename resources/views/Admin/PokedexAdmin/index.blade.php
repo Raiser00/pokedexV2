@@ -19,7 +19,7 @@
                         @endif
                     </div>
                     <div class="flex justify-center space-x-4">
-                        <a href="{{ route('pokemon.edit', $pokemn->id) }}" class="text-blue-500 font-medium hover:underline">Éditer</a>
+                        <a href="{{ route('pokemon.edit', $pokemn->id) }}" id="{{'edit' . $pokemn->id}}" class="text-blue-500 font-medium hover:underline">Éditer</a>
                         <form action="{{ route('pokemon.destroy', $pokemn->id) }}" method="POST" class="inline">
                             @csrf
                             @method('DELETE')

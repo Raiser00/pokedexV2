@@ -112,7 +112,7 @@
 
             <!-- Submit Button -->
             <div class="flex justify-end">
-                <x-primary-button type="submit">
+                <x-primary-button id="sendEdit" type="submit">
                     {{ __('Modifier') }}
                 </x-primary-button>
             </div>
